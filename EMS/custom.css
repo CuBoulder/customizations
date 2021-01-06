@@ -1,0 +1,39 @@
+#page-title h1 {
+  font-weight: bolder;
+  -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+  background-color: #000;
+}
+
+#user-menu-section .dropdown-toggle {
+  background-color: #000 !important;
+}
+
+.vems-panel {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+font {
+  color: #222222;
+}
+
+.nav-tabs .active a,
+.nav-tabs .active a:hover {
+  border-bottom: solid 6px #cfb87b !important;
+}
+
+a.current-page {
+  border-left: solid 6px #cfb87b;
+}
+
+a.current-page:hover {
+  border-left: solid 6px #a6a6a6 !important;
+}
+
+.nav .dropdown-menu {
+  background-color: #000;
+}
