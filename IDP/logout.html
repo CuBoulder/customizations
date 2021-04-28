@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Web Login Service :: Logout</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--
+        <meta http-equiv="refresh" content="120;url=$flowExecutionUrl&_eventId=propagate">
+        -->
+    </head>
+
+<body>
+    <div class="wrapper">
+      <div class="container">
+<!-- TOP HEADER/BRAND AREA -->
+  <header class="fixed">
+    <!-- CU LOGO -->
+    <div id="logo-wrapper">
+    <div id="logo-cu">
+    <a href="http://www.colorado.edu">
+    <img src="./images/cu-boulder-logo-text-black.svg" alt="University of Colorado Boulder" />
+    </a>
+    </div>
+    </div>
+    <!-- SITE TITLE -->
+    <div id="header-wrapper">
+    <div id="header" class="no-underline">
+        <h1>Federated Identity Service </h1>
+    </div>
+    </div">
+  </header>
+<!-- TOP END -->
+
+        <div class="content">
+          <div class="column one">
+              <div class="spacer">&nbsp;</div>
+              <h3 style="text-align:center;">Logout</h3>
+              <p style="padding:10px 0;">You will be asked to re-authenticate to <strong>NEW</strong> services that are protected by Federated Identity Service.</p>
+            <br>
+            <p>However, you may still have active sessions to the following services:</p>
+
+            <ol>
+              <li>some cool SP</li>
+              <li>other cool SP</li>
+            </ol>
+
+            <br>
+            <p>Click the Logout button for a "best effort" attempt at terminating the active sessions listed above<p>
+            <br>
+            <p>Click the Cancel button to stay signed on and keep your sessions active</p>
+            <br>
+
+            <form id="propagate_form" method="POST" action="">
+               <button class="form-element form-button" id="propagate_yes" type="submit" name="_eventId" value="propagate">Logout</button>
+               <button class="form-element form-button" id="propagate_no" type="submit" name="_eventId" value="end">Cancel</button>
+            </form>
+
+<!--
+                <p><strong>#springMessageText("idp.logout.complete", "The logout operation is complete, and no other services appear to have been accessed during this session.")</strong></p>
+-->
+
+                <!-- If SAML logout with no extra work to do, complete the flow by adding a hidden iframe. -->
+                <!--
+                #if ( $profileRequestContext.getProfileId().contains("saml2/logout") )
+                    <iframe style="display:none" src="$flowExecutionUrl&_eventId=proceed">
+                #end
+                -->
+
+	    <br>
+	    <p>
+            <strong>To ensure you end your session with Federated Identity Service, you will need to quit your web browser. 
+            Leaving your browser open may make you more vulnerable to another user gaining access through your account.</strong>
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+<!-- BRAND FOOTER -->
+<div id="footer-wrapper">
+<div id="footer">
+<div id="oit-foot">
+<strong>
+    <a href="http://www.colorado.edu/oit/">Office of Information Technology</a>
+</strong><br/>
+Contact the IT Service Center<br /> 
+at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a>
+</div>
+<div id="cu-foot">
+<img src="./images/be-boulder-white.svg" alt="Be Boulder" /><br />
+<strong><a href="http://www.colorado.edu/">University of Colorado Boulder</a></strong><br />
+			&copy; Regents of the University of Colorado<br />
+			<a href="http://www.colorado.edu/about/privacy-statement">Privacy</a> &bull; <a href="http://www.colorado.edu/about/legal-trademarks">Legal &amp; Trademarks</a>
+</div>
+</div>
+</div>
+<!-- END BRAND FOOTER -->
+    </div>
+</body>
+</html>

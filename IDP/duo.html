@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Login Service</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        </head>
+  	<script type="text/javascript">
+	function toggle() {
+  		var ele = document.getElementById("toggleText");
+  		if(ele.style.display == "block") {
+        		ele.style.display = "none";
+    		}
+  		else {
+    		ele.style.display = "block";
+  		}
+	}
+	function toggleDos() {
+  		var ele = document.getElementById("toggleDosText");
+  		if(ele.style.display == "block") {
+        		ele.style.display = "none";
+    		}
+  		else {
+    		ele.style.display = "block";
+  		}
+	}
+  	</script>
+  	<body>
+
+    <div class="wrapper">
+      <div class="container">
+
+<!-- TOP HEADER/BRAND AREA -->
+  <header class="fixed">
+    <!-- CU LOGO -->
+    <div id="logo-wrapper">
+    <div id="logo-cu">
+    <a href="http://www.colorado.edu">
+    <img src="./images/cu-boulder-logo-text-black.svg" alt="University of Colorado Boulder" />
+    </a>
+    </div>
+    </div>
+    <!-- SITE TITLE -->
+    <div id="header-wrapper">
+    <div id="header" class="no-underline">
+        <h1>Federated Identity Service </h1>
+    </div>
+    </div">
+  </header>
+<!-- TOP END -->
+
+        <div class="content">
+          <div class="column one">
+<!-- DUO BLOCK -->
+            <script src="./js/Duo-Web-v2.min.js"></script>
+            <script>
+              Duo.init({
+                'host': '$apiHost',
+                'sig_request': '$sigRequest',
+                'post_argument': 'signedDuoResponse'
+              });
+            </script>
+            <form id="duo_form" class="shibboleth-login-form" method="post">
+              <input type="hidden" name="_eventId" value="proceed" />
+              <div class="box fl-panel" id="login">
+              <iframe id="duo_iframe" title="duo" width="75%" height="360" min-width="304px" max-width="620px" frameborder="2" ></iframe>
+
+<style>
+  #duo_iframe {
+    width: 100%;
+    min-width: 304px;
+    max-width: 620px;
+    height: 330px;
+  }
+</style>
+        
+              </div>
+              <div class="form-element-wrapper">
+                <input style="visibility:hidden;" type="submit" value="disabled" disabled>
+              </div>
+
+            </form>
+<!-- DUO BLOCK (end) -->
+          </div> <!-- end column one block -->
+
+          <a href="http://www.colorado.edu/oit/webaccess/help" target="_blank">Need Help?</a>
+
+	  <div id="ucb-additional-text">
+                 Quit or close all browser windows to logout.<br>
+	         DO NOT bookmark this page!
+	  </div>
+
+        </div> <!-- end content block -->
+      </div>
+
+<!-- BRAND FOOTER -->
+<div id="footer-wrapper">
+<div id="footer">
+<div id="oit-foot">
+<strong>
+    <a href="http://www.colorado.edu/oit/">Office of Information Technology</a>
+</strong><br/>
+Contact the IT Service Center<br /> 
+at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a>
+</div>
+<div id="cu-foot">
+<img src="./images/be-boulder-white.svg" alt="Be Boulder" /><br />
+<strong><a href="http://www.colorado.edu/">University of Colorado Boulder</a></strong><br />
+			&copy; Regents of the University of Colorado<br />
+			<a href="http://www.colorado.edu/about/privacy-statement">Privacy</a> &bull; <a href="http://www.colorado.edu/about/legal-trademarks">Legal &amp; Trademarks</a>
+</div>
+</div>
+</div>
+<!-- END BRAND FOOTER -->
+
+    </div>
+ 	</body>
+</html>
