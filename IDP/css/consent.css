@@ -1,6 +1,10 @@
 /* consent CSS */
+h1{
+    font-weight: normal;
+}
 form{
     padding: 0px!important;
+    width: 100% !important;
 }
 a {
     color: #0072bc;
@@ -14,6 +18,10 @@ a:focus, a:hover, a:active {
     color: #0072bc;
     text-decoration: underline;
 }
+li strong{
+    font-family: 'Courier New', Courier, monospace;
+}
+
 #tou-content {
     font-family:monospace;
     width: 95%;
@@ -40,8 +48,7 @@ a:focus, a:hover, a:active {
 .service_description {
     font-style: italic;
 }
-.organization_name {
-}
+
 #generalConsent {
     width: 89%;
     background-color:#f6f6f6;
@@ -65,25 +72,14 @@ a:focus, a:hover, a:active {
     overflow: hidden;
 }
 #attributeReleaseTitle {
-    width: 98%;
-    border:1px solid grey;
-    font-weight: bold;
-    padding-block: unset;
-    padding-left: 3px;
-    background-color: beige;
-    float: inline-start;
+    margin-bottom: 2em;
 }
 #attributeRelease {
-    width: 98%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 15px; 
-    margin-right: 10px;
-    /*overflow: visible;*/
-    overflow: hidden;
-    border: 0;
-    /*border: 1px solid #e3e3e3;*/
-    float: inline-start;
+    border: 1px solid #3e3e3e;
+    padding: 20px;
+}
+#attributeRelease ul {
+    list-style-type: none;
 }
 /* **** */
 #attributeRelease table {
@@ -148,19 +144,12 @@ a:focus, a:hover, a:active {
 }
 /* Style the collapsible content. Note: hidden by default */
 .about-content {
-    display:none;
-    padding-top: 2px;
-    padding-bottom: 6px;
-    padding-left: 10px;
-    padding-right: 18px;
-    overflow:hidden;
     background-color:#fff;
-    border-bottom: dashed #808080;
-    border-left: dashed #808080;
-    /*border-right: dashed #808080;*/
-    border-top-color: #808080;
-    border-bottom-left-radius: 8px;
-    /*border-bottom-right-radius: 8px;*/
+    margin: 2em 0;
+}
+
+.service-name{
+    font-weight: bold;
 }
 .spacer {
     padding:0;
@@ -170,12 +159,9 @@ a:focus, a:hover, a:active {
   padding: 0;
   color: #B61601;
 }
-.form-button {
-    width:99%;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:inherit;
-    padding-right:inherit;
+
+.form-buttons{
+    display: flex;
 }
 input[type="submit"]{
     background: #565A5C;

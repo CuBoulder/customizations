@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" type="image/ico" href="../images/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/main.css">
         <link rel="stylesheet" type="text/css" href="../css/consent.css">
@@ -32,87 +33,77 @@
 <!-- TOP END -->
  <div class="content">
  <div class="column one">
-
- <p style="margin-top: 70px;"> You are about to access the service:
- <br>
- <span class="service_name">YourSP</span>
- </p>
-
- <div class="spacer"><br></div>
-
- <div id=attributeReleaseTitle>
-     <p>Digital ID Card (Information to be Provided to Service)</p>
- </div>
-
- <div id="attributeRelease">
-     <ul>
-         <li>First Name :: <strong>Ralphie</strong></li>
-         <li>Last Name :: <strong>Buffalo</strong></li>
-         <li>Email Address :: <strong>&bull;&nbsp;ralphie.buffalo@colorado.edu</strong>
-             <strong>&bull;&nbsp;rbuffalo@colorado.edu</strong>
-         </li>
-         <li>Employee Number :: <strong>999999</strong></li>
-     </ul>
- </div>
+    <h1> Log in to <span class="service-name"> Service Name </span> </h1>
+    <div class="about-content">
+        <p>
+            Your Digital ID Card is your personal information, or profile, that will be shared with the service. Choose one of the consent duration options below to proceed. <a href="https://oit.colorado.edu/services/identity-access-management/federated-identity/help/digital-id-attributes" target="_blank">Learn more about your Digital ID Card.</a>
+        </p>
+    </div>
+    <div id=attributeReleaseTitle>
+        <p>Digital ID Card (Information to be Provided to Service)</p>
+    </div>
+    <div id="attributeRelease">
+        <ul>
+            <li>First Name :: <strong>Ralphie</strong></li>
+            <li>Last Name :: <strong>Buffalo</strong></li>
+            <li>Email Address :: <strong>&bull;&nbsp;ralphie.buffalo@colorado.edu</strong>
+                <strong>&bull;&nbsp;rbuffalo@colorado.edu</strong>
+            </li>
+            <li>Employee Number :: <strong>999999</strong></li>
+        </ul>
+    </div>
 
  <p style="margin-top: 10px;"> </p>
-
- <!-- collapsible about -->
- <button type="button" class="collapsible">&raquo;  More about your Digital ID Card</button>
- <div class="about-content">
- <p>
- Your Digital ID Card is your personal information, or profile, that will be shared with the service. Choose one of the consent duration options below to proceed. <a href="https://oit.colorado.edu/services/identity-access-management/federated-identity/help/digital-id-attributes" target="_blank">Learn more about your Digital ID Card.</a>
- </p>
- </div> 
 
  <div class="spacer"><br></div>
 
  <form action="$flowExecutionUrl" method="post">
- <div>
- <div id="generalConsent">
- <p>
- Select the duration of your information release.
- </p>
- <hr><br>
- <p>
- <input id="_shib_idp_doNotRememberConsent" type="radio" name="_shib_idp_consentOptions" value="_shib_idp_doNotRememberConsent"> (Ask again) I agree to send my information this time <strong>ONLY</strong>.
- </p>
+    <div>
+        <input type="checkbox" id="something" name="share-information-check" value="">
+        <label for="something"> Automatically share this information next time I log into this service. </label><br>
+        <!-- <div id="generalConsent">
+        <p>
+        Select the duration of your information release.
+        </p>
+        <hr><br>
+        <p>
+        <input id="_shib_idp_doNotRememberConsent" type="radio" name="_shib_idp_consentOptions" value="_shib_idp_doNotRememberConsent"> (Ask again) I agree to send my information this time <strong>ONLY</strong>.
+        </p>
 
- <p>
- <input id="_shib_idp_rememberConsent" type="radio" name="_shib_idp_consentOptions" value="_shib_idp_rememberConsent" checked> (Remember) I agree that this information will be sent automatically to this service in the future.
- </p>
- <br>
- <p style="font-size:10px;font-style:italic;">This setting can be revoked at any time with the checkbox on the login page.</p>
- </div>
-
- <div class="spacer"><br></div>
-
- <p style="text-align: center; padding: unset; margin: 0px; margin-right: 12px">
- <button class="form-element form-button" type="submit" name="_eventId_proceed" value="Accept">Accept</button>
- <button class="form-element form-button" type="reset" name="_eventId_AttributeReleaseRejected" value="Reject">Reject</button>
- </p>
- </div>
+        <p>
+        <input id="_shib_idp_rememberConsent" type="radio" name="_shib_idp_consentOptions" value="_shib_idp_rememberConsent" checked> (Remember) I agree that this information will be sent automatically to this service in the future.
+        </p>
+        <br>
+        <p style="font-size:10px;font-style:italic;">This setting can be revoked at any time with the checkbox on the login page.</p>
+        </div> -->
+        <div class="form-buttons">
+            <button class="form-element form-button" type="submit" name="_eventId_proceed" value="Accept">Login</button>
+            <button class="form-element form-button" type="reset" name="_eventId_AttributeReleaseRejected" value="Reject">Cancel</button>
+        </div>
+    </div>
  </form>
  </div>
  </div>
  </div>
-
-<!-- script at end required for collapse -->
-<script type="text/javascript">
- var coll = document.getElementsByClassName("collapsible");
- var i;
-
- for (i = 0; i < coll.length; i++) {
-     coll[i].addEventListener("click", function() {
-         this.classList.toggle("active");
-         var content = this.nextElementSibling;
-         if (content.style.display === "block") {
-             content.style.display = "none";
-         } else {
-             content.style.display = "block";
-         }
-     });
- }
-</script>
+  <!-- BRAND FOOTER -->
+  <div id="footer-wrapper">
+    <div id="footer">
+        <div id="oit-foot">
+            <strong>
+                <a href="http://www.colorado.edu/oit/">Office of Information Technology</a>
+            </strong><br/>
+            Contact the IT Service Center<br /> 
+            at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a>
+        </div>
+        <div id="cu-foot">
+            <img src="../images/be-boulder-white.svg" alt="Be Boulder" /><br />
+            <strong><a href="http://www.colorado.edu/">University of Colorado Boulder</a></strong><br />
+                    &copy; Regents of the University of Colorado<br />
+                    <a href="http://www.colorado.edu/about/privacy-statement">Privacy</a> &bull; <a href="http://www.colorado.edu/about/legal-trademarks">Legal &amp; Trademarks</a>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- END BRAND FOOTER -->
  </body>
 </html>

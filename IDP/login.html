@@ -64,32 +64,39 @@
                         
               <div class="form-element-wrapper">
 		<br>
-                <input class="form-element form-field" id="username" title="IdentiKey" name="j_username" type="text" placeholder="ex: abcd1234" value="" autofocus="autofocus" tabindex="1" autocapitalize="off" autocomplete="off">
+                <label for="username"> Identikey Username </label>
+                <input class="form-element form-field" id="username" title="IdentiKey" name="j_username" type="text" placeholder="ex: abcd1234, fellc" value="" autofocus="autofocus" tabindex="1" autocapitalize="off" autocomplete="off">
               </div>
 
               <div class="form-element-wrapper">
 		<br>
+                <label for="password"> Password </label>
                 <input class="form-element form-field" id="password" title="Password" name="j_password" type="password" placeholder="Password" value="" tabindex="2" autocapitalize="off" autocomplete="off">
               </div>
 
-              <div class="form-element-wrapper">
+              <!-- <div class="form-element-wrapper">
                 <input id="_shib_idp_revokeConsent" title="revoke_consent" type="checkbox" name="_shib_idp_revokeConsent" value="true">
                 Clear prior granting of permission for CU to release your information to this service.
-              </div>
+              </div> -->
 
               <div class="form-element-wrapper">
-                <button class="form-element form-button" type="submit" name="_eventId_proceed"
-                    onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button>
+                <!-- <button class="form-element form-button" type="submit" name="_eventId_proceed"
+                    onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button> -->
+                <button class="form-element form-button" type="submit" name="_eventId_proceed">Login</button>
+                <button class="form-element form-button" type="button" name="">Display information sharing settings</button>
               </div>
 
             </form>
             
           </div>
-          <a href="https://oit.colorado.edu/services/identity-access-management/federated-identity/help" target="_blank">Need Help?</a>
+          <h3> Help </h3>
+          <a href="https://oit.colorado.edu/tutorial/identikey-manager-forgot-my-identikey-password" target="_blank" rel="noopener" >Forgot your password?</a>
+          <br>
+          <a href="https://oit.colorado.edu/services/identity-access-management/federated-identity/help" target="_blank" rel="noopener" >Need Other Help?</a>
 
 	<div id="ucb-additional-text">
-          Quit or close all browser windows to logout.<br>
-	  DO NOT bookmark this page!
+    Remember to close your browser to completely log out.<br>
+    DO NOT bookmark this page!
 	</div>
         </div>
       </div>
@@ -115,5 +122,23 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
 <!-- END BRAND FOOTER -->
 
     </div>
+    <script>
+      /*
+       * Validate form and submit
+       */
+      (() => {
+        let form = document.getElementsByTagName('form')[0];
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          // Strip email domian if user typed in their email
+          let username = e.target.elements[0];
+          if( username.value.includes('@colorado.edu') ){
+            username.value = username.value.replace('@colorado.edu', '');
+          }
+          e.target.elements[2].innerText = "Logging in, please wait...";
+          e.target.submit();
+        });
+      })();
+    </script>
 </body>
 </html>
