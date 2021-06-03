@@ -56,12 +56,11 @@
 
         <div class="content">
           <div class="column one">
-
+            <noscript> This form requires JavaScript to be enabled to work properly. Please enable JavaScript to continue. </noscript>
             <form action="$flowExecutionUrl" method="post">
               <legend>
                   Log in to <b>Your SP</b>
               </legend>
-                        
               <div class="form-element-wrapper">
 		<br>
                 <label for="username"> Identikey Username </label>
@@ -74,16 +73,13 @@
                 <input class="form-element form-field" id="password" title="Password" name="j_password" type="password" placeholder="Password" value="" tabindex="2" autocapitalize="off" autocomplete="off">
               </div>
 
-              <!-- <div class="form-element-wrapper">
-                <input id="_shib_idp_revokeConsent" title="revoke_consent" type="checkbox" name="_shib_idp_revokeConsent" value="true">
-                Clear prior granting of permission for CU to release your information to this service.
-              </div> -->
+              <input id="_shib_idp_revokeConsent" hidden="true" title="revoke_consent" type="checkbox" name="_shib_idp_revokeConsent" value="true">
 
               <div class="form-element-wrapper">
                 <!-- <button class="form-element form-button" type="submit" name="_eventId_proceed"
                     onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button> -->
                 <button class="form-element form-button" type="submit" name="_eventId_proceed">Login</button>
-                <button class="form-element form-button" type="button" name="">Display information sharing settings</button>
+                <button class="form-element form-button" type="button" name="display_information" value="false">Display information sharing settings</button>
               </div>
 
             </form>
@@ -128,6 +124,12 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
        */
       (() => {
         let form = document.getElementsByTagName('form')[0];
+        // Info Share button
+        form[4].addEventListener('click', e => {
+          e.target.value = !JSON.parse(e.target.value);
+          e.target.classList.toggle('display-toggle');
+        });
+
         form.addEventListener('submit', function(e){
           e.preventDefault();
           // Strip email domian if user typed in their email
@@ -135,7 +137,9 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
           if( username.value.includes('@colorado.edu') ){
             username.value = username.value.replace('@colorado.edu', '');
           }
-          e.target.elements[2].innerText = "Logging in, please wait...";
+          // set checkbox to true if user clicked button
+          e.target.elements[2].checked = JSON.parse(e.target.elements[4].value);
+          e.target.elements[3].innerText = "Logging in, please wait...";
           e.target.submit();
         });
       })();

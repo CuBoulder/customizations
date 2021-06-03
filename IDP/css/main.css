@@ -218,6 +218,11 @@ form legend {
     margin-top: 2em;
     margin-right: 2em;
 }
+
+.form-button.display-toggle{
+  background-color: #CFB87C;
+}
+
 .form-button:hover {
     background-color: #d6d6d6;
     transition: 300ms background-color;
