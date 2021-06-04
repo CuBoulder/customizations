@@ -79,7 +79,7 @@
                 <!-- <button class="form-element form-button" type="submit" name="_eventId_proceed"
                     onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button> -->
                 <button class="form-element form-button" type="submit" name="_eventId_proceed">Login</button>
-                <button class="form-element form-button" type="button" name="display_information" value="false">Display information sharing settings</button>
+                <button class="form-element form-button" type="submit" name="display_information" value="false">Display information sharing settings</button>
               </div>
 
             </form>
@@ -127,11 +127,13 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
         // Info Share button
         form[4].addEventListener('click', e => {
           e.target.value = !JSON.parse(e.target.value);
-          e.target.classList.toggle('display-toggle');
         });
 
         form.addEventListener('submit', function(e){
           e.preventDefault();
+          if( e.target.elements[0].value === '' || e.target.elements[1].value === '' ){
+            return;
+          }
           // Strip email domian if user typed in their email
           let username = e.target.elements[0];
           if( username.value.includes('@colorado.edu') ){
