@@ -79,7 +79,7 @@
                 <!-- <button class="form-element form-button" type="submit" name="_eventId_proceed"
                     onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button> -->
                 <button class="form-element form-button" type="submit" name="_eventId_proceed">Login</button>
-                <button class="form-element form-button" type="submit" name="display_information" value="false">Display information sharing settings</button>
+                <button class="form-element form-button" type="submit" name="_eventId_proceed">Display information sharing settings</button>
               </div>
 
             </form>
@@ -124,14 +124,14 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
        */
       (() => {
         let form = document.getElementsByTagName('form')[0];
-        // Info Share button
+        // Check hidden checkbox if user clicked on 'Display Info Share' button
         form[4].addEventListener('click', e => {
-          e.target.value = !JSON.parse(e.target.value);
+          form[2].checked = true;
         });
 
         form.addEventListener('submit', function(e){
-          e.preventDefault();
           if( e.target.elements[0].value === '' || e.target.elements[1].value === '' ){
+            e.preventDefault();
             return;
           }
           // Strip email domian if user typed in their email
@@ -139,10 +139,7 @@ at 303-735-4357 or <a href="mailto:oithelp@colorado.edu">oithelp@colorado.edu</a
           if( username.value.includes('@colorado.edu') ){
             username.value = username.value.replace('@colorado.edu', '');
           }
-          // set checkbox to true if user clicked button
-          e.target.elements[2].checked = JSON.parse(e.target.elements[4].value);
           e.target.elements[3].innerText = "Logging in, please wait...";
-          e.target.submit();
         });
       })();
     </script>
