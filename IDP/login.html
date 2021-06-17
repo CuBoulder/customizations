@@ -64,18 +64,18 @@
               <div class="form-element-wrapper">
 		<br>
                 <label for="username"> Identikey Username </label>
-                <input class="form-element form-field" id="username" title="IdentiKey" name="j_username" type="text" placeholder="ex: abcd1234, fellc" value="" autofocus="autofocus" tabindex="1" autocapitalize="off" autocomplete="off">
+                <input required class="form-element form-field" id="username" title="IdentiKey" name="j_username" type="text" placeholder="ex: abcd1234, fellc" value="" autofocus="autofocus" tabindex="1" autocapitalize="off" autocomplete="off">
               </div>
 
               <div class="form-element-wrapper">
 		<br>
                 <label for="password"> Password </label>
-                <input class="form-element form-field" id="password" title="Password" name="j_password" type="password" placeholder="Password" value="" tabindex="2" autocapitalize="off" autocomplete="off">
+                <input required class="form-element form-field" id="password" title="Password" name="j_password" type="password" placeholder="Password" value="" tabindex="2" autocapitalize="off" autocomplete="off">
               </div>
 
               <input id="_shib_idp_revokeConsent" hidden="true" title="revoke_consent" type="checkbox" name="_shib_idp_revokeConsent" value="true">
 
-              <div class="form-element-wrapper">
+              <div>
                 <!-- <button class="form-element form-button" type="submit" name="_eventId_proceed"
                     onClick="this.childNodes[0].nodeValue='"Logging in, please wait..."'">Login</button> -->
                 <button class="form-element form-button" type="submit" name="_eventId_proceed">Login</button>
