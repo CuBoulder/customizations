@@ -180,6 +180,7 @@ form legend {
 }
 .form-element-wrapper {
     margin-bottom: 12px;
+    width: 60%;
 }
 .form-element {
     border: none;
@@ -313,33 +314,31 @@ header.fixed {
     #footer{
         flex-direction: column;
     }
+    .form-element-wrapper{ width: 100%; }
     #cu-foot{ margin-top: 2em;}
 }
 
 @media (min-width: 768px) { 
     .container, #header, #logo-cu, #footer { max-width: 100%; }
-    form{ width: 65%; }
     #cu-foot{
         margin-left: 30%;
     }
 }
 @media (min-width: 992px) {
     .container, #header, #logo-cu, #footer { max-width: 960px; }
-    form{ width: 60%; }
     #cu-foot{
         margin-left: 55%;
     }
 }
 @media (min-width: 1200px) {
     .container, #header, #logo-cu, #footer { max-width: 1100px; }
-    form{ width: 60%; }
     #cu-foot{
         margin-left: 55%;
     }
 }
 @media (min-width: 1500px) {
     .container, #header, #logo-cu, #footer { max-width: 1460px; }
-    form{ width: 55%; }
+    .form-element-wrapper{ width: 55%; }
     #cu-foot{
         margin-left: 50%;
     }
